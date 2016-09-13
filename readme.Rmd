@@ -5,4 +5,4 @@ date: "September 13, 2016"
 output: html_document
 ---
 
-Here's the link to this app online: \url(https://leighseverson.shinyapps.io/attendance/)
+Here's the link to this app online: https://leighseverson.shinyapps.io/attendance/
