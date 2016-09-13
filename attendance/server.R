@@ -19,8 +19,8 @@ shinyServer(function(input, output, session) {
   
   humanTime <- function() format(Sys.time(), "%Y%m%d")
   
-  fieldsAll <- c("date", "Tulsi Ram Gompo", "Janalee Thompson", "Preston Phillips", 
-                 "Scott Braley", "Tori Burket", "Scott Kelleher", "Chloe Stenkamp")
+  fieldsAll <- c("date", "Tulsi R.G.", "Janalee T.", "Preston P.", 
+                 "Scott B.", "Tori B.", "Scott K.", "Chloe S.")
 
   
   formData <- reactive({

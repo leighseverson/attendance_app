@@ -11,13 +11,13 @@ shinyUI(
       ),
       
       column(3, 
-             checkboxInput("Tulsi Ram Gompo", "Tulsi Ram Gompo", FALSE), 
-             checkboxInput("Janalee Thompson", "Janalee Thompson", FALSE), 
-             checkboxInput("Preston Phillips", "Preston Phillips", FALSE), 
-             checkboxInput("Scott Braley", "Scott Braley", FALSE), 
-             checkboxInput("Tori Burket", "Tori Burket", FALSE), 
-             checkboxInput("Scott Kelleher", "Scott Kelleher", FALSE), 
-             checkboxInput("Chloe Stenkamp", "Chloe Stenkamp", FALSE), 
+             checkboxInput("Tulsi R.G.", "Tulsi R.G.", FALSE), 
+             checkboxInput("Janalee T.", "Janalee T.", FALSE), 
+             checkboxInput("Preston P.", "Preston P.", FALSE), 
+             checkboxInput("Scott B.", "Scott B.", FALSE), 
+             checkboxInput("Tori B.", "Tori B.", FALSE), 
+             checkboxInput("Scott K.", "Scott K.", FALSE), 
+             checkboxInput("Chloe S.", "Chloe S.", FALSE), 
              actionButton("download", "Download", class = "btn-primary")  
              
      
