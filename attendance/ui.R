@@ -18,10 +18,12 @@ shinyUI(
              checkboxInput("Tori B.", "Tori B.", FALSE), 
              checkboxInput("Scott K.", "Scott K.", FALSE), 
              checkboxInput("Chloe S.", "Chloe S.", FALSE), 
-             actionButton("download", "Download", class = "btn-primary")  
-             
-     
-             
+             actionButton('makegroups', 'Student Groups'), 
+             downloadButton('downloadData', 'Download')
+
+             ),
+      column(3, 
+             DT::dataTableOutput('tbl')
              ),
       
       textOutput("message")
