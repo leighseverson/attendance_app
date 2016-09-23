@@ -21,6 +21,12 @@ shinyServer(function(input, output) {
                        timestamp = Sys.Date())
   })
   
+  make_attendance_file <- reactive({
+    attendance_file <- data.frame(student = student_list) %>%
+      mutate(attended = as.numeric(student %in% input$student_list))
+    
+  })
+  
   make_groups <- reactive({ 
     groups <- form_data() %>%
       select(name) %>%
@@ -35,12 +41,12 @@ shinyServer(function(input, output) {
     
  )
     
-# output$downloadData <- downloadHandler(
-#     filename = function() { paste(input$date, '.csv', sep = '') }, 
-#     content = function(file) {
-#       write.csv(formData(), file)
-#     }
-#   )
+output$downloadData <- downloadHandler(
+    filename = function() { paste("attendance_", input$date, ".csv", sep = "") },
+    content = function(file) {
+      write.csv(make_attendance_file(), file, row.names = FALSE)
+    }
+  )
 
 observeEvent(input$makegroups, {
    output$tbl <- renderTable({

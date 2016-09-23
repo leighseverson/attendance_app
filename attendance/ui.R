@@ -8,14 +8,13 @@ student_list <- c("Scott B.",
 
 shinyUI(
   fluidPage(
-    titlePanel("R Programming for Research, Fall 2016"),
     
     id = "form", 
     
     fluidRow(
 
       column(3, 
-             dateInput("date", label = h3("Class date"),
+             dateInput("date", label = "Class date",
                        value = Sys.Date()) 
       ),
       

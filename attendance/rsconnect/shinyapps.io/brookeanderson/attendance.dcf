@@ -1,0 +1,9 @@
+name: attendance
+account: brookeanderson
+server: shinyapps.io
+appId: 127291
+bundleId: 565801
+url: https://brookeanderson.shinyapps.io/attendance/
+when: 1474599040.47135
+asMultiple: FALSE
+asStatic: FALSE
