@@ -43,13 +43,13 @@ shinyServer(function(input, output) {
 #   )
 
 observeEvent(input$makegroups, {
-   output$tbl <- DT::renderDataTable({
-      datatable(make_groups(), 
-                rownames = FALSE,
-                class = "nowrap",
-                caption = "Group assignments",
-                options = list(dom = 'tip'))
-    })
+   output$tbl <- renderTable({
+     make_groups()
+    },
+    caption = "Group assignments",
+    caption.placement = "top",
+    include.rownames = FALSE,
+    include.colnames = FALSE)
 })
  
   

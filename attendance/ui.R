@@ -29,7 +29,7 @@ shinyUI(
 
              ),
       column(3, 
-             DT::dataTableOutput('tbl')
+             tableOutput('tbl')
              ),
       
       textOutput("message")
