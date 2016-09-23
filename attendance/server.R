@@ -15,15 +15,10 @@ student_list <- c("Scott B.",
 
 shinyServer(function(input, output) {
   
-  humanTime <- function() format(Sys.time(), "%Y%m%d")
-  
   form_data <- reactive({  
-    att_date <- as.Date(input$date, format = "%Y-%m-%d")
-    timestamp <- as.Date(humanTime(), format = "%Y%m%d")
-    
     attendance <- data.frame(name = input$student_list,
-                       date = att_date,
-                       timestamp = timestamp)
+                       date = input$date,
+                       timestamp = Sys.Date())
   })
   
   make_groups <- reactive({ 

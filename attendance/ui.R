@@ -15,7 +15,8 @@ shinyUI(
     fluidRow(
 
       column(3, 
-             textInput("date", label = h3("Date input"), value = "2016-09-01") 
+             dateInput("date", label = h3("Class date"),
+                       value = Sys.Date()) 
       ),
       
       column(3, 
@@ -23,7 +24,7 @@ shinyUI(
                                 "Students in attendance",
                                 choices = student_list,
                                 selected = student_list),
-             actionButton('makegroups', 'Student Groups'), 
+             actionButton('makegroups', 'Assign groups'), 
              downloadButton('downloadData', 'Download')
 
              ),
