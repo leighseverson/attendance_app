@@ -1,6 +1,14 @@
+student_list <- c("Scott B.",
+                  "Tori B.",
+                  "Tulsi G.",
+                  "Scott K.",
+                  "Preston P.",
+                  "Chloe S.",
+                  "Janalee T.")
+
 shinyUI(
   fluidPage(
-    titlePanel("R Programming for Research Fall 2016"),
+    titlePanel("R Programming for Research, Fall 2016"),
     
     id = "form", 
     
@@ -11,13 +19,10 @@ shinyUI(
       ),
       
       column(3, 
-             checkboxInput("Tulsi R.G.", "Tulsi R.G.", FALSE), 
-             checkboxInput("Janalee T.", "Janalee T.", FALSE), 
-             checkboxInput("Preston P.", "Preston P.", FALSE), 
-             checkboxInput("Scott B.", "Scott B.", FALSE), 
-             checkboxInput("Tori B.", "Tori B.", FALSE), 
-             checkboxInput("Scott K.", "Scott K.", FALSE), 
-             checkboxInput("Chloe S.", "Chloe S.", FALSE), 
+             checkboxGroupInput("student_list", 
+                                "Students in attendance",
+                                choices = student_list,
+                                selected = student_list),
              actionButton('makegroups', 'Student Groups'), 
              downloadButton('downloadData', 'Download')
 
