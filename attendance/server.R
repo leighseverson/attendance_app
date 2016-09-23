@@ -31,10 +31,9 @@ shinyServer(function(input, output) {
     groups <- form_data() %>%
       select(name) %>%
       mutate(n = n(),
-             n_groups = ifelse(n > 5, 3, 2),
+             n_groups = n %/% 2,
              Name = sample(name),
-             Group = rep(1:n_groups[1],
-                         ceiling(n[1] / n_groups[1]))[1:n[1]]) %>%
+             Group = rep(1:n_groups[1], length.out = n[1])) %>%
       group_by(Group) %>%
       summarize(Students = paste(Name, collapse = ", ")) 
   }
