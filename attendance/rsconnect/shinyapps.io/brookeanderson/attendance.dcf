@@ -2,8 +2,8 @@ name: attendance
 account: brookeanderson
 server: shinyapps.io
 appId: 127291
-bundleId: 565807
+bundleId: 565819
 url: https://brookeanderson.shinyapps.io/attendance/
-when: 1474599588.55945
+when: 1474600249.43441
 asMultiple: FALSE
 asStatic: FALSE
