@@ -5,76 +5,52 @@ library(tibble)
 library(zoo)
 library(DT)
 
+student_list <- c("Scott B.",
+                  "Tori B.",
+                  "Tulsi G.",
+                  "Scott K.",
+                  "Preston P.",
+                  "Chloe S.",
+                  "Janalee T.")
+
 shinyServer(function(input, output) {
   
   humanTime <- function() format(Sys.time(), "%Y%m%d")
   
-  fieldsAll <- c("date", "Tulsi R.G.", "Janalee T.", "Preston P.", 
-                 "Scott B.", "Tori B.", "Scott K.", "Chloe S.")
-  
-  formData <- reactive({  
-    data <- sapply(fieldsAll, function(x) input[[x]])
-    data <- c(data, timestamp = humanTime())
-    data <- as.data.frame(data)
-    data <- rownames_to_column(data)
+  form_data <- reactive({  
+    att_date <- as.Date(input$date, format = "%Y-%m-%d")
+    timestamp <- as.Date(humanTime(), format = "%Y%m%d")
     
-    att_date <- as.Date(data$data[1], format = "%Y-%m-%d")
-    
-    timestamp <- as.Date(data$data[9], format = "%Y%m%d")
-    
-    data$date <- att_date
-    data$timestamp <- timestamp 
-    
-    data <- data[2:8,]
-    rownames(data) <- c(1:7)
-    colnames(data) <- c("name", "here", "date", "timestamp")
-    
+    attendance <- data.frame(name = input$student_list,
+                       date = att_date,
+                       timestamp = timestamp)
   })
   
-  Groups <- reactive({ 
-    data <- sapply(fieldsAll, function(x) input[[x]])
-    data <- c(data, timestamp = humanTime())
-    data <- as.data.frame(data)
-    data <- rownames_to_column(data)
-    
-    att_date <- as.Date(data$data[1], format = "%Y-%m-%d")
-    
-    timestamp <- as.Date(data$data[9], format = "%Y%m%d")
-    
-    data$date <- att_date
-    data$timestamp <- timestamp 
-    
-    data <- data[2:8,]
-    rownames(data) <- c(1:7)
-    colnames(data) <- c("name", "here", "date", "timestamp")
-    
-    groups <- data %>%
-      filter(here == 1) %>%
+  make_groups <- reactive({ 
+    groups <- form_data() %>%
       select(name) %>%
-      mutate(n = n(), 
-             n_groups = ifelse(n > 5, 3, 2), 
-             Name = sample(name), 
-             Group = rep(1:n_groups[1], 
+      mutate(n = n(),
+             n_groups = ifelse(n > 5, 3, 2),
+             Name = sample(name),
+             Group = rep(1:n_groups[1],
                          ceiling(n[1] / n_groups[1]))[1:n[1]]) %>%
       group_by(Group) %>%
-      summarize(Students = paste(Name, collapse = ", "))
-    
-    groups
+      summarize(Students = paste(Name, collapse = ", ")) %>%
+      select(-Group)
   }
     
  )
     
-output$downloadData <- downloadHandler(
-    filename = function() { paste(input$date, '.csv', sep = '') }, 
-    content = function(file) {
-      write.csv(formData(), file)
-    }
-  )
+# output$downloadData <- downloadHandler(
+#     filename = function() { paste(input$date, '.csv', sep = '') }, 
+#     content = function(file) {
+#       write.csv(formData(), file)
+#     }
+#   )
 
 observeEvent(input$makegroups, {
-    output$tbl <- DT::renderDataTable({
-      groups <- Groups()
-      datatable(groups)
+   output$tbl <- DT::renderDataTable({
+      datatable(make_groups())
     })
 })
  
