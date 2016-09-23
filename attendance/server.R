@@ -30,8 +30,7 @@ shinyServer(function(input, output) {
              Group = rep(1:n_groups[1],
                          ceiling(n[1] / n_groups[1]))[1:n[1]]) %>%
       group_by(Group) %>%
-      summarize(Students = paste(Name, collapse = ", ")) %>%
-      select(-Group)
+      summarize(Students = paste(Name, collapse = ", ")) 
   }
     
  )
@@ -45,7 +44,11 @@ shinyServer(function(input, output) {
 
 observeEvent(input$makegroups, {
    output$tbl <- DT::renderDataTable({
-      datatable(make_groups())
+      datatable(make_groups(), 
+                rownames = FALSE,
+                class = "nowrap",
+                caption = "Group assignments",
+                options = list(dom = 'tip'))
     })
 })
  
