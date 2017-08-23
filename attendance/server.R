@@ -5,13 +5,23 @@ library(tibble)
 library(zoo)
 library(DT)
 
-student_list <- c("Scott B.",
-                  "Tori B.",
-                  "Tulsi G.",
-                  "Scott K.",
-                  "Preston P.",
-                  "Chloe S.",
-                  "Janalee T.")
+student_list <- c("Marialexia",
+                  "Jose",
+                  "Colleen",
+                  "Drew",
+                  "Rebecca",
+                  "Mackenzie",
+                  "Molly",
+                  "Elle",
+                  "Kate",
+                  "Katie",
+                  "Brian",
+                  "Lizette",
+                  "Ethan",
+                  "Maggie",
+                  "Mercedes",
+                  "Marcela",
+                  "Ray")
 
 shinyServer(function(input, output) {
   
