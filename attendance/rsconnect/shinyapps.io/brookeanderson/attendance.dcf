@@ -1,9 +1,12 @@
 name: attendance
+title: attendance
+username:
 account: brookeanderson
 server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
 appId: 127291
-bundleId: 565819
+bundleId: 996327
 url: https://brookeanderson.shinyapps.io/attendance/
-when: 1474600249.43441
+when: 1506353791.39743
 asMultiple: FALSE
 asStatic: FALSE

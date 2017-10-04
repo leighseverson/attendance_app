@@ -6,12 +6,10 @@ library(zoo)
 library(DT)
 
 student_list <- c("Marialexia",
-                  "Jose",
                   "Colleen",
                   "Drew",
                   "Rebecca",
                   "Mackenzie",
-                  "Molly",
                   "Elle",
                   "Kate",
                   "Katie",
@@ -20,7 +18,6 @@ student_list <- c("Marialexia",
                   "Ethan",
                   "Maggie",
                   "Mercedes",
-                  "Marcela",
                   "Ray")
 
 shinyServer(function(input, output) {
