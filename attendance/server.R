@@ -63,23 +63,5 @@ observeEvent(input$makegroups, {
     include.rownames = FALSE,
     include.colnames = FALSE)
 })
- 
-  
-#  observeEvent(input$download, {
-#    
-#    output$message <- renderText({
-#      
-#      progress <- shiny::Progress$new(session, min = 1, max = 10)
-#      on.exit(progress$close())
-#      
-#      progress$set(message = 'Downloading form')
-#      
-#      for (i in 1:10) {
-#        progress$set(value = i)
-#        Sys.sleep(0.1)
-#      }
-#      "Thanks, your form has been downloaded."
-#    })
-#    
-#  })
+
 })
