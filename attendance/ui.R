@@ -1,17 +1,24 @@
-student_list <- c("Marialexia",
-                  "Colleen",
-                  "Drew",
-                  "Rebecca",
-                  "Mackenzie",
-                  "Elle",
-                  "Kate",
-                  "Katie",
-                  "Brian",
-                  "Lizette",
-                  "Ethan",
-                  "Maggie",
-                  "Mercedes",
-                  "Ray")
+student_list <- c("Jenni A.",
+                  "Aeriel B.",
+                  "Rebecca C.",
+                  "Grant E.",
+                  "Amy F.",
+                  "Sarah H.",
+                  "Yuqin J.",
+                  "Alyssa M.",
+                  "Camron P.",
+                  "Anastasia R.",
+                  "Kyle R.",
+                  "Ana V.",
+                  "Amanda W.",
+                  "Kathleen W.",
+                  "Kayla W.",
+                  "Nichole M.",
+                  "Marjo F.",
+                  "Randy X.",
+                  "Shayna W.",
+                  "Katy K."
+                  )
 
 shinyUI(
   fluidPage(
@@ -39,25 +46,7 @@ shinyUI(
              ),
       
       textOutput("message")
-      
-   #   shinyjs::toggle(
-  #      div(
-  #        id = "submit_another", 
-  #        actionLink("submit_another", "Fill out a new form")
-  #      )
-  #    )
-      
-  
+
     )
-    
-       
-#    shinyjs::hidden(
-#      div(
-#        id = "thankyou_msg", 
-#        h3("Thanks, your form was downloaded!")
-#      )
-#    )
 
 ))
-
-# attendance_app

@@ -5,20 +5,27 @@ library(tibble)
 library(zoo)
 library(DT)
 
-student_list <- c("Marialexia",
-                  "Colleen",
-                  "Drew",
-                  "Rebecca",
-                  "Mackenzie",
-                  "Elle",
-                  "Kate",
-                  "Katie",
-                  "Brian",
-                  "Lizette",
-                  "Ethan",
-                  "Maggie",
-                  "Mercedes",
-                  "Ray")
+student_list <- c("Jenni A.",
+                  "Aeriel B.",
+                  "Rebecca C.",
+                  "Grant E.",
+                  "Amy F.",
+                  "Sarah H.",
+                  "Yuqin J.",
+                  "Alyssa M.",
+                  "Camron P.",
+                  "Anastasia R.",
+                  "Kyle R.",
+                  "Ana V.",
+                  "Amanda W.",
+                  "Kathleen W.",
+                  "Kayla W.",
+                  "Nichole M.",
+                  "Marjo F.",
+                  "Randy X.",
+                  "Shayna W.",
+                  "Katy K."
+                  )
 
 shinyServer(function(input, output) {
   
@@ -38,11 +45,16 @@ shinyServer(function(input, output) {
     groups <- form_data() %>%
       select(name) %>%
       mutate(n = n(),
+             # Figure out how many groups there should be based on 
+             # the number of people in class today
              n_groups = n %/% 2,
-             Name = sample(name),
-             Group = rep(1:n_groups[1], length.out = n[1])) %>%
+             # Create the right number of assignments to each group
+             Group = rep(1:n_groups[1], length.out = n[1]), 
+             # Shuffle the group assignments randomly
+             Group = sample(Group)
+             ) %>%
       group_by(Group) %>%
-      summarize(Students = paste(Name, collapse = ", ")) 
+      summarize(Students = paste(name, collapse = ", ")) 
   }
     
  )
@@ -62,24 +74,6 @@ observeEvent(input$makegroups, {
     caption.placement = "top",
     include.rownames = FALSE,
     include.colnames = FALSE)
-})
+  })
  
-  
-#  observeEvent(input$download, {
-#    
-#    output$message <- renderText({
-#      
-#      progress <- shiny::Progress$new(session, min = 1, max = 10)
-#      on.exit(progress$close())
-#      
-#      progress$set(message = 'Downloading form')
-#      
-#      for (i in 1:10) {
-#        progress$set(value = i)
-#        Sys.sleep(0.1)
-#      }
-#      "Thanks, your form has been downloaded."
-#    })
-#    
-#  })
 })
