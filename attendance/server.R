@@ -5,7 +5,8 @@ library(tibble)
 library(zoo)
 library(DT)
 
-student_list <- c("Caroline", 
+student_list <- c("Burton",
+                  "Caroline", 
                   "Cetan",
                   "Chaoyu",
                   "Collin",
@@ -18,14 +19,15 @@ student_list <- c("Caroline",
                   "Jessica",
                   "Kristin",
                   "Kyle",
-                  "Marcel Kate",
+                  "Marcel",
                   "Matthew",
+                  "Nikki",
                   "Patrick",
                   "Rachel",
                   "Sara",
                   "Shayna",
                   "Sherry",
-                  "Tianqinq",
+                  "Sunny",
                   "Tyler"
                   )
 
