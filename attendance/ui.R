@@ -1,6 +1,5 @@
 student_list <- c("Burton",
                   "Caroline", 
-                  "Cetan",
                   "Chaoyu",
                   "Collin",
                   "Daniel",
@@ -10,19 +9,15 @@ student_list <- c("Burton",
                   "Jacob",
                   "Jessica",
                   "Khum",
-                  "Kristin",
                   "Kyle",
-                  "Marcel",
                   "Matthew",
+                  "Molly",
                   "Nikki",
-                  "Patrick",
                   "Rachel",
-                  "Sara",
                   "Sere",
                   "Shayna",
                   "Sherry",
-                  "Sunny",
-                  "Tyler"
+                  "Sunny"
                   )
 
 shinyUI(
