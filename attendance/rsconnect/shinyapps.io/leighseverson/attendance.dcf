@@ -1,7 +1,9 @@
 name: attendance
 account: leighseverson
 server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
 appId: 125511
-bundleId: 556767
+bundleId: 7598897
 url: https://leighseverson.shinyapps.io/attendance/
-when: 1473799480.75466
+asMultiple: FALSE
+asStatic: FALSE

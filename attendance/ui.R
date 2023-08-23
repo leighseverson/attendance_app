@@ -1,23 +1,16 @@
-student_list <- c("Burton",
-                  "Caroline", 
-                  "Chaoyu",
-                  "Collin",
-                  "Daniel",
-                  "Eric",
-                  "Erin",
-                  "Heather",
-                  "Jacob",
-                  "Jessica",
-                  "Khum",
-                  "Kyle",
-                  "Matthew",
-                  "Molly",
-                  "Nikki",
-                  "Rachel",
-                  "Sere",
-                  "Shayna",
-                  "Sherry",
-                  "Sunny"
+student_list <- c('Anna',
+                  'Cahill',
+                  'Danielle',
+                  'Eileen',
+                  'Elizabeth',
+                  'Jane',
+                  'Juan'
+                  ,'Jyoti'
+                  ,'Melea'
+                  ,'Olivia'
+                  ,'Rachel'
+                  ,'Wei'
+                  ,'Zane'
                   )
 
 shinyUI(
