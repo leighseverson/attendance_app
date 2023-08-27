@@ -1,17 +1,21 @@
-student_list <- c('Anna',
-                  'Cahill',
-                  'Danielle',
-                  'Eileen',
-                  'Elizabeth',
-                  'Jane',
-                  'Juan'
-                  ,'Jyoti'
-                  ,'Melea'
-                  ,'Olivia'
-                  ,'Rachel'
-                  ,'Wei'
-                  ,'Zane'
-                  )
+student_list <- c('Anna', 
+                  'Cahill', 
+                  'Danni', 
+                  'Eileen', 
+                  'Elizabeth', 
+                  'Jane', 
+                  'Juan', 
+                  'Jyoti', 
+                  'Khalid',
+                  'Maggie', 
+                  'Marika', 
+                  'Melea',
+                  'Nancy', 
+                  'Olivia', 
+                  'Rachel', 
+                  'Wei', 
+                  'Zane'
+)
 
 shinyUI(
   fluidPage(
